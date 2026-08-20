@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Frontend build output
+frontend/dist/
+
+# Environment files (keep examples in Git)
+.env
+.env.*
+!.env.example
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local Codex configuration
+.agents/
+.codex/
+
+# Logs
+*.log
