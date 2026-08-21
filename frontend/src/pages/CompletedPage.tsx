@@ -3,9 +3,9 @@ import { Icon } from '../components/common/Icon'
 import './cinematic.css'
 
 const completionLevels = [
-  { number: '01', concept: 'Nhớ', title: 'Xếp lại dòng lịch sử', key: 'vnr-level-1' },
-  { number: '02', concept: 'Hiểu', title: 'Bàn diễn biến lịch sử', key: 'vnr-level-2' },
-  { number: '03', concept: 'Vận dụng', title: 'Giải mã bức tranh', key: 'vnr-level-3' },
+  { number: '01', concept: 'Nhận biết & hiểu', title: 'Giải mã đường lối 1951', key: 'vnr-game-v2-level-1' },
+  { number: '02', concept: 'Phân loại & liên kết', title: 'Xây dựng thế trận', key: 'vnr-game-v2-level-2' },
+  { number: '03', concept: 'Củng cố', title: 'Giải mã Điện Biên Phủ', key: 'vnr-game-v2-level-3' },
 ]
 
 export function CompletedPage() {
@@ -42,4 +42,3 @@ export function CompletedPage() {
     </div>
   )
 }
-

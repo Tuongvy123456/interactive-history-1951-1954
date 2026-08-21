@@ -10,9 +10,9 @@ type FooterState = {
 }
 
 const footerStates: Record<string, FooterState> = {
-  '/game/level-1': { stage: 'Màn 01 / 03', step: 'Dòng thời gian', previous: '/game', next: '/game/level-2' },
-  '/game/level-2': { stage: 'Màn 02 / 03', step: 'Bàn diễn biến', previous: '/game/level-1', next: '/game/level-3' },
-  '/game/level-3': { stage: 'Màn 03 / 03', step: 'Giải mã bức tranh', previous: '/game/level-2', next: '/final' },
+  '/game/level-1': { stage: 'Màn 01 / 03', step: 'Giải mã đường lối 1951', previous: '/game', next: '/game/level-2' },
+  '/game/level-2': { stage: 'Màn 02 / 03', step: 'Xây dựng thế trận', previous: '/game/level-1', next: '/game/level-3' },
+  '/game/level-3': { stage: 'Màn 03 / 03', step: 'Giải mã Điện Biên Phủ', previous: '/game/level-2', next: '/final' },
   '/final': { stage: 'Đoạn kết', step: 'Điện Biên Phủ', previous: '/game/level-3', next: '/completed', nextLabel: 'Hoàn thành' },
 }
 
@@ -41,4 +41,3 @@ export function Footer() {
     </footer>
   )
 }
-

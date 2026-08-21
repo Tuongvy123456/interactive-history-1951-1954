@@ -5,25 +5,25 @@ import './pages.css'
 const levels = [
   {
     number: '01',
-    concept: 'Nhớ',
-    title: 'Xếp lại dòng lịch sử',
-    description: 'Sắp xếp sáu sự kiện theo đúng trình tự từ năm 1951 đến năm 1954.',
-    icon: 'history',
+    concept: 'Nhận biết & hiểu',
+    title: 'Giải mã đường lối 1951',
+    description: 'Hoàn thiện sơ đồ Đại hội II và Chính cương 1951 qua các câu hỏi.',
+    icon: 'account_tree',
     to: '/game/level-1',
   },
   {
     number: '02',
-    concept: 'Hiểu',
-    title: 'Bàn diễn biến lịch sử',
-    description: 'Trả lời tám câu hỏi để từng lớp diễn biến xuất hiện trên bản đồ.',
-    icon: 'hub',
+    concept: 'Phân loại & liên kết',
+    title: 'Xây dựng thế trận',
+    description: 'Phân loại các quyết định và hoạt động của Đông – Xuân 1953–1954.',
+    icon: 'view_kanban',
     to: '/game/level-2',
   },
   {
     number: '03',
-    concept: 'Vận dụng',
-    title: 'Giải mã bức tranh',
-    description: 'Hoàn thành năm câu hỏi để giải mã sáu mươi vùng của bức tranh.',
+    concept: 'Củng cố',
+    title: 'Giải mã Điện Biên Phủ',
+    description: 'Trả lời đúng để hoàn thiện bức tranh chiến thắng Điện Biên Phủ.',
     icon: 'extension',
     to: '/game/level-3',
   },
@@ -54,4 +54,3 @@ export function GameSelectPage() {
     </div>
   )
 }
-
