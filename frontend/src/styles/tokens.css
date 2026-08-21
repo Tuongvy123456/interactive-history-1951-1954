@@ -16,9 +16,21 @@
   --color-outline-soft: #d8b9a0;
   --color-success: #53623f;
   --color-error: #9c1f1b;
-  --font-display: 'Libre Caslon Text', Georgia, serif;
-  --font-body: 'Work Sans', Arial, sans-serif;
-  --font-mono: 'Courier Prime', 'Courier New', monospace;
+  --font-display: 'Noto Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Be Vietnam Pro', Arial, sans-serif;
+  --font-meta: 'IBM Plex Mono', 'Courier New', monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --heading-sm: clamp(1.5rem, 2.2vw, 2rem);
+  --heading-md: clamp(2rem, 3.4vw, 3rem);
+  --heading-lg: clamp(3rem, 5vw, 4rem);
+  --heading-xl: clamp(3rem, 5vw, 5.25rem);
+  --leading-body: 1.65;
+  --leading-heading: 1.12;
+  --tracking-ui: 0.015em;
+  --tracking-meta: 0.06em;
   --header-height: 72px;
   --footer-height: 64px;
   --sidebar-open: 236px;
@@ -36,4 +48,3 @@
   --transition-fast: 160ms ease;
   --transition-base: 280ms ease;
 }
-

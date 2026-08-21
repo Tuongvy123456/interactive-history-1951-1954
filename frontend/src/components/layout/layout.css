@@ -17,7 +17,8 @@
 .app-header__brand {
   font-family: var(--font-display);
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .app-header__nav {
@@ -32,11 +33,12 @@
   height: 100%;
   place-items: center;
   border-bottom: 2px solid transparent;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-ui);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .app-header__nav a:hover,
@@ -103,23 +105,28 @@
 .app-sidebar__period {
   margin-bottom: 6px;
   color: var(--color-primary);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: var(--font-meta);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
 }
 
 .app-sidebar__identity strong {
   color: var(--color-primary);
   font-family: var(--font-display);
   font-size: 1.25rem;
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: var(--leading-heading);
+  letter-spacing: -0.01em;
   text-transform: uppercase;
 }
 
 .app-sidebar__identity small {
   margin-top: 6px;
   color: var(--color-brown);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  line-height: 1.5;
 }
 
 .app-sidebar__nav {
@@ -143,10 +150,10 @@
   background: transparent;
   color: var(--color-brown);
   cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-ui);
   text-align: left;
   text-transform: uppercase;
 }
@@ -238,9 +245,9 @@
 .app-footer__meta {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-family: var(--font-meta);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-meta);
   text-transform: uppercase;
 }
 
@@ -260,10 +267,12 @@
   gap: 6px;
   padding: 8px 12px;
   border: 1px solid var(--color-outline);
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-ui);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .app-footer__actions a.is-primary {
@@ -362,4 +371,3 @@
     font-size: 0.68rem;
   }
 }
-
