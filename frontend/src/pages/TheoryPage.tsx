@@ -10,7 +10,7 @@ export function TheoryPage() {
         <div>
           <p className="page-kicker"><Icon name="folder_special" /> Hồ sơ mật – Cấp độ 1</p>
           <h1 className="page-heading">Lý thuyết</h1>
-          <p className="page-lead">Từ năm 1951 đến Chiến thắng Điện Biên Phủ năm 1954.</p>
+          <p className="page-lead">Ba chuyên đề nối liền đường lối năm 1951, thế trận Đông – Xuân và Chiến thắng Điện Biên Phủ.</p>
         </div>
         <span className="stamp">Tư liệu lưu trữ</span>
       </header>
@@ -33,10 +33,9 @@ export function TheoryPage() {
       </section>
 
       <div className="theory-cta">
-        <p>Đã nắm rõ tình hình chiến sự?</p>
+        <p>Đã nắm rõ đường lối, thế trận và quyết định chiến lược?</p>
         <Link className="button" to="/game"><Icon name="sports_esports" /> Bắt đầu trò chơi</Link>
       </div>
     </div>
   )
 }
-

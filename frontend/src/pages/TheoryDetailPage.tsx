@@ -40,9 +40,31 @@ export function TheoryDetailPage() {
             </figure>
           </section>
 
-          <section className="historical-copy">
-            {chapter.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </section>
+          <nav aria-label="Mục lục chương" className="paper-card theory-toc">
+            <span className="mono-label">Mục lục hồ sơ</span>
+            <ol>
+              {chapter.sections.map((section, index) => (
+                <li key={section.id}><a href={`#${section.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{section.title}</a></li>
+              ))}
+            </ol>
+          </nav>
+
+          <div className="historical-copy">
+            {chapter.sections.map((section, index) => (
+              <section className="historical-section" id={section.id} key={section.id}>
+                <header>
+                  <span>Mục {String(index + 1).padStart(2, '0')}</span>
+                  <h3>{section.title}</h3>
+                </header>
+                {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {section.highlights && (
+                  <ul aria-label={`Từ khóa ${section.title}`} className="historical-highlights">
+                    {section.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                  </ul>
+                )}
+              </section>
+            ))}
+          </div>
 
           <section className="paper-card key-points">
             <h3><Icon name="policy" /> Những điểm cần ghi nhớ</h3>
@@ -54,13 +76,13 @@ export function TheoryDetailPage() {
 
         <aside className="theory-detail__aside">
           <div className="paper-card map-brief">
-            <span className="mono-label">Bản đồ chiến lược</span>
+            <span className="mono-label">{chapter.documentLabel}</span>
             <img alt={chapter.imageAlt} src={chapter.image} />
             <strong><Icon name="location_on" filled /> {chapter.period}</strong>
           </div>
           <div className="paper-card timeline-brief">
             <span className="stamp">Tuyệt mật</span>
-            <h3>Tiến trình</h3>
+            <h3>Dấu mốc chính</h3>
             {chapter.facts.map((fact, index) => (
               <div className="timeline-brief__item" key={fact.label}>
                 <i className={index === 0 ? 'is-active' : ''} />
@@ -80,4 +102,3 @@ export function TheoryDetailPage() {
     </article>
   )
 }
-
