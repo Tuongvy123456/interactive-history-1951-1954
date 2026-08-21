@@ -29,18 +29,29 @@ export function CodedPuzzle({ revealedCodes, complete }: CodedPuzzleProps) {
           )
         })}
         <g className={`puzzle-illustration ${flagVisible ? 'is-visible' : ''}`}>
-          <path className="puzzle-flag" d="M118 76Q235 38 374 91L360 220Q236 168 120 214Z" />
+          <path className="puzzle-flagpole" d="M147 83V354" />
+          <path className="puzzle-flag" d="M149 94C213 65 291 78 378 104L365 208C286 180 219 171 149 200Z" />
         </g>
         <polygon
           className={`puzzle-star ${starVisible ? 'is-visible' : ''}`}
-          points="246,86 260,119 296,122 268,145 277,180 246,160 215,180 224,145 196,122 232,119"
+          points="258,105 270,132 300,135 277,155 284,185 258,169 232,185 239,155 216,135 246,132"
         />
         <g className={`puzzle-bunker ${bunkerVisible ? 'is-visible' : ''}`}>
-          <path d="M98 404L132 286H370L410 404Z" />
-          <path d="M166 404V330H334V404M215 404V350H285V404" />
-          <path d="M58 476Q174 426 246 458T450 438" />
+          <path className="puzzle-bunker__earth" d="M78 367L116 298Q249 266 386 305L425 367Z" />
+          <path className="puzzle-bunker__roof" d="M97 355Q247 316 405 354L392 385H108Z" />
+          <path className="puzzle-bunker__front" d="M119 378H381L405 481H93Z" />
+          <path className="puzzle-bunker__door" d="M218 402H286V481H218Z" />
+          <path className="puzzle-bunker__opening" d="M137 407H194V435H137ZM310 407H365V435H310Z" />
+          <path className="puzzle-bunker__detail" d="M106 454H217M286 454H394M124 386H377" />
         </g>
-        {complete && <text className="puzzle-date" x="250" y="555">07.05.1954</text>}
+        <g className={`puzzle-final-art ${complete ? 'is-visible' : ''}`}>
+          <path className="puzzle-ground puzzle-ground--back" d="M0 450Q91 414 183 444T353 439T500 421V600H0Z" />
+          <path className="puzzle-ground puzzle-ground--front" d="M0 505Q95 464 194 497T371 493T500 468V600H0Z" />
+          <path className="puzzle-trench" d="M20 520Q121 475 210 508T365 510T480 484" />
+          <text className="puzzle-landmark" x="250" y="334">HẦM CHỈ HUY ĐIỆN BIÊN PHỦ</text>
+          <text className="puzzle-victory" x="250" y="548">CHIẾN THẮNG ĐIỆN BIÊN PHỦ</text>
+          <text className="puzzle-date" x="250" y="575">07.05.1954</text>
+        </g>
       </svg>
       <p>Mỗi mã đáp án đúng mở sáu mảnh của bức tranh. Hoàn thành 5/5 để hiện toàn bộ lá cờ chiến thắng.</p>
     </div>

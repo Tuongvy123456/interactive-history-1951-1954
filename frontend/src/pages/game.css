@@ -573,11 +573,12 @@
 .coded-puzzle polygon:not(.puzzle-star) {
   stroke: var(--color-outline);
   stroke-width: 0.8;
-  transition: fill 0.6s ease, stroke-opacity 0.6s ease;
+  transition: fill 0.6s ease, opacity 0.6s ease, stroke-opacity 0.6s ease;
 }
 
 .coded-puzzle.is-complete polygon:not(.puzzle-star) {
-  stroke-opacity: 0.18;
+  opacity: 0.3;
+  stroke-opacity: 0.12;
 }
 
 .puzzle-code {
@@ -599,7 +600,8 @@
 
 .puzzle-illustration,
 .puzzle-star,
-.puzzle-bunker {
+.puzzle-bunker,
+.puzzle-final-art {
   opacity: 0;
   transition: opacity 0.8s ease;
   pointer-events: none;
@@ -607,14 +609,22 @@
 
 .puzzle-illustration.is-visible,
 .puzzle-star.is-visible,
-.puzzle-bunker.is-visible {
+.puzzle-bunker.is-visible,
+.puzzle-final-art.is-visible {
   opacity: 1;
 }
 
 .puzzle-flag {
-  fill: rgba(181, 40, 32, 0.32);
+  fill: #B52820;
   stroke: #B52820;
-  stroke-width: 3;
+  stroke-width: 2;
+}
+
+.puzzle-flagpole {
+  fill: none;
+  stroke: #5A3324;
+  stroke-linecap: round;
+  stroke-width: 7;
 }
 
 .puzzle-star {
@@ -624,18 +634,87 @@
 }
 
 .puzzle-bunker path {
+  stroke: #5A3324;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.puzzle-bunker__earth {
+  fill: #777052;
+}
+
+.puzzle-bunker__roof {
+  fill: #8F7754;
+}
+
+.puzzle-bunker__front {
+  fill: #6D4B36;
+}
+
+.puzzle-bunker__door,
+.puzzle-bunker__opening {
+  fill: #33251F;
+}
+
+.puzzle-bunker__detail {
+  fill: none;
+  opacity: 0.65;
+}
+
+.puzzle-ground {
+  stroke: none;
+}
+
+.puzzle-ground--back {
+  fill: #777052;
+  opacity: 0.9;
+}
+
+.puzzle-ground--front {
+  fill: #8F7754;
+  opacity: 0.94;
+}
+
+.puzzle-trench {
   fill: none;
   stroke: #5A3324;
-  stroke-width: 5;
+  stroke-width: 7;
+}
+
+.puzzle-landmark,
+.puzzle-victory,
+.puzzle-date {
+  paint-order: stroke;
+  stroke: #F6E7BF;
+  stroke-linejoin: round;
+  text-anchor: middle;
+}
+
+.puzzle-landmark {
+  fill: #F6E7BF;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  stroke: #5A3324;
+  stroke-width: 3px;
+}
+
+.puzzle-victory {
+  fill: #5A3324;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  stroke-width: 5px;
 }
 
 .puzzle-date {
   fill: var(--color-primary);
   font-family: var(--font-meta);
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-anchor: middle;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  stroke-width: 4px;
 }
 
 .puzzle-result {
