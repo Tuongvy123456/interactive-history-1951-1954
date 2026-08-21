@@ -1,0 +1,437 @@
+.cinematic-page {
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(246, 231, 191, 0.4), rgba(255, 248, 240, 0.94) 65%),
+    var(--color-background);
+}
+
+.cinematic-grain {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(90, 51, 36, 0.1) 0.6px, transparent 0.6px);
+  background-size: 5px 5px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.cinematic-progress {
+  position: absolute;
+  z-index: 5;
+  top: 22px;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.cinematic-progress button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 9px;
+  border: 1px solid var(--color-outline-soft);
+  background: rgba(255, 248, 240, 0.75);
+  color: var(--color-brown);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.cinematic-progress button span {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid var(--color-outline);
+  border-radius: 50%;
+}
+
+.cinematic-progress button.is-active,
+.cinematic-progress button.is-past {
+  border-color: var(--color-primary-bright);
+  color: var(--color-primary);
+}
+
+.cinematic-progress button.is-active span,
+.cinematic-progress button.is-past span {
+  background: var(--color-primary-bright);
+  color: var(--color-background);
+}
+
+.cinematic-phase {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 85px 20px 95px;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.cinematic-phase.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.cinematic-phase > h1 {
+  position: relative;
+  z-index: 2;
+  margin: 8px 0;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.cinematic-phase > p:not(.cinematic-kicker, .cinematic-time, .cinematic-date) {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  color: var(--color-brown);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.cinematic-kicker,
+.cinematic-time,
+.cinematic-date {
+  position: relative;
+  z-index: 2;
+  margin: 6px;
+  color: var(--color-brown);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.decision-map,
+.logistics-map {
+  position: absolute;
+  inset: 6% 12%;
+  opacity: 0.7;
+}
+
+.decision-map svg,
+.logistics-map svg {
+  width: 100%;
+  height: 100%;
+}
+
+.decision-map path {
+  fill: none;
+  stroke: var(--color-outline);
+  stroke-width: 1.5;
+}
+
+.decision-map circle {
+  fill: none;
+  stroke: var(--color-primary-bright);
+  stroke-width: 3;
+  stroke-dasharray: 580;
+  animation: draw-circle 2.6s ease forwards;
+}
+
+.decision-map circle.decision-map__point {
+  fill: var(--color-primary-bright);
+  stroke: none;
+}
+
+.decision-map text,
+.logistics-map text {
+  fill: var(--color-brown);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  text-anchor: middle;
+  text-transform: uppercase;
+}
+
+.logistics-routes path {
+  fill: none;
+  stroke: var(--color-primary-bright);
+  stroke-width: 2;
+  stroke-dasharray: 7 7;
+  animation: route-flow 8s linear infinite;
+}
+
+.logistics-map circle {
+  fill: var(--color-primary-bright);
+}
+
+.cinematic-principle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cinematic-principle span:first-child {
+  color: var(--color-primary-bright);
+}
+
+.cinematic-principle i {
+  color: var(--color-outline);
+  font-style: normal;
+}
+
+.cinematic-lines {
+  position: absolute;
+  inset: 20% 10%;
+  display: grid;
+  align-content: center;
+  gap: 90px;
+  opacity: 0.25;
+}
+
+.cinematic-lines i {
+  height: 1px;
+  background: var(--color-outline);
+  transform: rotate(-4deg);
+}
+
+.campaign-card {
+  width: min(100%, 650px);
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.campaign-waves {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 22px 0 5px;
+}
+
+.campaign-waves span {
+  padding: 10px 18px;
+  border: 1px solid var(--color-outline);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  animation: wave-highlight 4s infinite;
+}
+
+.campaign-waves span:nth-child(2) { animation-delay: 1.2s; }
+.campaign-waves span:nth-child(3) { animation-delay: 2.4s; }
+
+.campaign-card svg {
+  width: 100%;
+  max-height: 300px;
+}
+
+.campaign-card svg path,
+.campaign-ring {
+  fill: none;
+  stroke: var(--color-primary-bright);
+  stroke-width: 2;
+  stroke-dasharray: 6 5;
+}
+
+.campaign-card svg > circle:first-child {
+  fill: var(--color-charcoal);
+}
+
+.campaign-ring {
+  stroke-width: 3;
+  stroke-dasharray: 705;
+  animation: draw-circle 4s ease infinite;
+}
+
+.cinematic-finale .cinematic-time {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.cinematic-finale .cinematic-date {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.cinematic-finale h1 {
+  animation: final-reveal 1.8s ease both;
+}
+
+.cinematic-controls {
+  position: absolute;
+  z-index: 6;
+  right: 24px;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.completed-page {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  padding: clamp(28px, 5vw, 62px) 18px;
+  background: var(--color-sepia);
+}
+
+.completed-dossier {
+  position: relative;
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: clamp(26px, 5vw, 58px);
+}
+
+.completed-dossier > .stamp {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.completed-dossier > header {
+  max-width: 780px;
+  margin: 0 auto 40px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--color-outline);
+  text-align: center;
+}
+
+.completed-dossier h1 {
+  margin: 8px 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  text-transform: uppercase;
+}
+
+.completed-dossier header > p:last-child {
+  color: var(--color-brown);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.completed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.completed-grid article {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  border: 1px solid var(--color-outline);
+  background: rgba(255, 243, 214, 0.75);
+  text-align: center;
+}
+
+.completed-grid article > strong {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--color-brown);
+  color: var(--color-background);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.completed-grid article.is-complete > strong {
+  background: var(--color-primary-bright);
+}
+
+.completed-grid article > span:not(.material-symbols-outlined) {
+  margin: 18px 0 3px;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.completed-grid h2 {
+  margin: 5px 0 18px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.completed-grid .material-symbols-outlined {
+  color: var(--color-primary-bright);
+  font-size: 34px;
+}
+
+.completed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 26px;
+  border-top: 1px solid var(--color-outline);
+}
+
+@keyframes draw-circle {
+  from { stroke-dashoffset: 705; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes wave-highlight {
+  0%, 28%, 100% { background: transparent; color: var(--color-brown); }
+  34%, 58% { background: var(--color-surface-high); color: var(--color-primary); }
+}
+
+@keyframes final-reveal {
+  from { opacity: 0; transform: scale(0.94); letter-spacing: 0.16em; }
+  to { opacity: 1; transform: scale(1); letter-spacing: 0.04em; }
+}
+
+@media (max-width: 800px) {
+  .cinematic-progress small {
+    display: none;
+  }
+
+  .decision-map,
+  .logistics-map {
+    inset: 15% 2%;
+  }
+
+  .completed-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .cinematic-progress {
+    top: 12px;
+  }
+
+  .cinematic-progress button {
+    padding: 5px;
+  }
+
+  .cinematic-controls {
+    right: 12px;
+    bottom: 10px;
+    left: 12px;
+  }
+
+  .cinematic-controls .button {
+    flex: 1;
+    padding-inline: 9px;
+    font-size: 0.68rem;
+  }
+
+  .campaign-waves span {
+    padding-inline: 10px;
+    font-size: 0.72rem;
+  }
+
+  .completed-dossier > .stamp {
+    position: static;
+    margin-bottom: 18px;
+  }
+}
+
