@@ -1,29 +1,43 @@
-# VNR
+# Dấu Ấn Điện Biên
 
-Repository này chứa frontend và backend trong cùng một nơi nhưng tách biệt hoàn toàn:
+React + Vite frontend với backend realtime Convex — cấu trúc phẳng, sẵn sàng deploy Vercel.
 
 ```text
-VNR/
-├── frontend/   # React + Vite
-└── backend/    # Dành cho nhóm backend
+.
+├── convex/          # Schema + mutations/queries
+├── public/          # Static assets (ảnh, audio)
+├── src/             # React app
+├── index.html
+├── vite.config.ts
+├── vercel.json
+└── package.json
 ```
 
-## Chạy frontend
+## Yêu cầu
 
-Yêu cầu Node.js 20 trở lên.
+- Node.js 20+
+
+## Chạy local
 
 ```bash
-cd frontend
 npm install
+
+# Terminal 1 — Convex
+npm run dev:convex
+
+# Terminal 2 — Vite
 npm run dev
 ```
 
-Sao chép `frontend/.env.example` thành `frontend/.env` nếu cần đổi địa chỉ API.
+Sao chép `.env.example` → `.env.local` và điền `VITE_CONVEX_URL` (URL từ Convex dashboard / `convex dev`).
 
-## Quy ước làm việc
+## Build
 
-- Mã frontend và dependency frontend chỉ nằm trong `frontend/`.
-- Nhóm frontend không chỉnh sửa nội dung trong `backend/`.
-- Nhóm backend có thể khởi tạo công nghệ riêng trong `backend/` mà không ảnh hưởng frontend.
-- Frontend đọc địa chỉ API từ biến `VITE_API_BASE_URL`.
+```bash
+npm run build
+```
 
+## Deploy
+
+1. **Convex (production):** `npx convex deploy`
+2. **Vercel:** import repo, Root Directory = `.` (root), env `VITE_CONVEX_URL` = URL Convex production.

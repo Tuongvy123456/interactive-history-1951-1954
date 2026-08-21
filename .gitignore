@@ -1,8 +1,12 @@
 # Dependencies
 node_modules/
 
-# Frontend build output
-frontend/dist/
+# Build output
+dist/
+
+# Leftover nested app folder (delete locally after stopping old Vite process)
+frontend/
+_frontend_unused/
 
 # Environment files (keep examples in Git)
 .env
@@ -15,9 +19,11 @@ frontend/dist/
 .DS_Store
 Thumbs.db
 
-# Local Codex configuration
+# Local Codex / agent config
 .agents/
 .codex/
+.claude/
+.history/
 
 # Logs
 *.log
